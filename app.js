@@ -38,8 +38,22 @@ function listaNombres() {
     }
 }
 
-function limpiarCampoDeEntrada() {
-    document.getElementById('amigo').value = '';
+function sortearAmigo() {
+    let selectorGanador = document.getElementById('resultado');
+    if (nombreDeAmigos.length === 0){
+        alert('No hay amigos para sortear')
+    } else {
+        let amigoSorteado = nombreDeAmigos[Math.floor(Math.random()*nombreDeAmigos.length)];
+        console.log(amigoSorteado)
+        const liGanador = document.createElement("li");
+        liGanador.textContent = amigoSorteado;
+        selectorGanador.appendChild(liGanador);
+    }
+
 }
 
-listaNombres()
+function limpiarCampoDeEntrada() {  
+    document.getElementById('amigo').value = '';
+}
+sortearAmigo();
+listaNombres();
