@@ -15,7 +15,7 @@ function agregarAmigo() {
     nombreDeAmigos.push(nombre);
     console.log(nombreDeAmigos);
     limpiarCampoDeEntrada();
-    listaNombres();
+    listaNombres(); 
 
     /*if (document.getElementById('amigo').value == '') {
         alert("Por favor, inserte un nombre.");
@@ -31,16 +31,12 @@ function listaNombres() {
     let liNombres = document.getElementById('listaAmigos');
     liNombres.innerHTML = ""; //`${liNombres}`
 
-    for (let i = 0; i < listaAmigos.length; i++){
-        const listaLi = document.createElement("li");
-        listaLi.Li.textContent = nombreDeAmigos[i];
-        liNombres.appendChild(li);
-        console.log(document.getElementById('listaAmigos')); // ¿Devuelve null?
-
-
+    for (let i = 0; i < nombreDeAmigos.length; i++) {
+      const listaLi = document.createElement("li");
+      listaLi.textContent = nombreDeAmigos[i];
+      liNombres.appendChild(listaLi);
     }
 }
-
 
 function limpiarCampoDeEntrada() {
     document.getElementById('amigo').value = '';
