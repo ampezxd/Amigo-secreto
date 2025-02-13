@@ -46,10 +46,16 @@ function sortearAmigo() {
         let amigoSorteado = nombreDeAmigos[Math.floor(Math.random()*nombreDeAmigos.length)];
         console.log(amigoSorteado)
         const liGanador = document.createElement("li");
-        liGanador.textContent = amigoSorteado;
+        liGanador.textContent = `El amigo sorteado es: ${amigoSorteado}`;
         selectorGanador.appendChild(liGanador);
+        limpiarListaDeAmigos();
     }
 
+}
+
+function limpiarListaDeAmigos(){
+    let liNombres = document.getElementById('listaAmigos');
+    liNombres.innerHTML = "";
 }
 
 function limpiarCampoDeEntrada() {  
